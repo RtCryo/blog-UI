@@ -1,0 +1,31 @@
+.container {
+    display: grid;
+    gap: 10px;
+    height: 140vh;
+    margin: 0.5rem;
+}
+
+.box{
+    background-color: bisque;
+    display: grid;
+    place-items: center;
+}
+
+.header {
+    grid-column: span 20;
+    grid-row: span 5;
+}
+
+.home {
+    grid-column: span 19;
+    grid-row: span 25;
+}
+
+.navbar {
+    grid-column: span 1;
+    grid-row: span 25;
+}
+
+.footer {
+    grid-column: span 20;
+}
