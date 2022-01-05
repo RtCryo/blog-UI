@@ -1,0 +1,36 @@
+.container {
+    display: grid;
+    grid-template-columns: auto 25vw auto;
+    gap: 4rem;
+}
+
+.box{
+    display: grid;
+    place-items: center;
+}
+
+.box button{
+    justify-self: stretch;
+    width: 7rem;
+    background-color:lightcoral
+}
+
+::ng-deep .mat-form-field-flex {
+    background-color: #ffffff00 !important;
+}
+
+form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    font-size: 14px;
+}
+  
+.full-width {
+    width: 100%;
+}
+
+.followerCount {
+    font-size: 14px;
+    align-self: center;
+}

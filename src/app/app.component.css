@@ -6,9 +6,14 @@
 }
 
 .box{
+    display: grid;
     background-color: bisque;
     display: grid;
     place-items: center;
+}
+
+.box app-header {
+    align-self: end;
 }
 
 .header {
@@ -17,12 +22,14 @@
 }
 
 .home {
-    grid-column: span 19;
+    margin-left: 4rem;
+    grid-column: span 18;
     grid-row: span 25;
 }
 
 .navbar {
-    grid-column: span 1;
+    margin-right: 4rem;
+    grid-column: span 2;
     grid-row: span 25;
 }
 

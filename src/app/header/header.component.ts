@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  value = '';
+  followerCount = "32";
+
   constructor() { }
 
   ngOnInit(): void {
