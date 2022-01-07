@@ -1,1 +1,8 @@
-<p>home works!</p>
+<div class = "container">
+    <mat-card *ngFor="let t of category" class = "card">
+        <mat-card-header>
+            <mat-card-title class = "title-text">{{t}}</mat-card-title>
+        </mat-card-header>
+        <img class = "card-image" mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+    </mat-card>
+</div>

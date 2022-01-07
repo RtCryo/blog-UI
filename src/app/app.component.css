@@ -1,38 +1,40 @@
 .container {
     display: grid;
+    grid-template-columns: auto 25rem;
+    grid-template-rows: 16rem auto 4rem;
     gap: 10px;
-    height: 140vh;
+    min-height: 120vh;
     margin: 0.5rem;
 }
 
 .box{
     display: grid;
     background-color: bisque;
-    display: grid;
     place-items: center;
 }
 
-.box app-header {
-    align-self: end;
-}
-
 .header {
-    grid-column: span 20;
-    grid-row: span 5;
+    align-items: end;
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
 
 .home {
     margin-left: 4rem;
-    grid-column: span 18;
-    grid-row: span 25;
+    align-items: start;
+    padding: 4rem;
+    grid-column-start: 1;
+    grid-column-end: 2;
 }
 
 .navbar {
     margin-right: 4rem;
-    grid-column: span 2;
-    grid-row: span 25;
+    grid-column-start: 2;
+    grid-column-end: 3;
 }
 
 .footer {
-    grid-column: span 20;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    
 }
