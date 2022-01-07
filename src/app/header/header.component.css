@@ -15,15 +15,11 @@
     background-color:lightcoral
 }
 
-::ng-deep .mat-form-field-flex {
-    background-color: #ffffff00 !important;
-}
-
 form {
     min-width: 150px;
     max-width: 500px;
     width: 100%;
-    font-size: 14px;
+    font-size: 16px;
 }
   
 .full-width {
