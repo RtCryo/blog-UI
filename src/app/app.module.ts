@@ -13,6 +13,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table';
+import { NumbersOnlyDirective } from './directive/numbers-only.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,8 @@ import { MatCardModule } from '@angular/material/card';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    NumbersOnlyDirective
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,9 @@ import { MatCardModule } from '@angular/material/card';
     MatInputModule,
     MatIconModule,
     FormsModule,
-    MatCardModule
+    MatCardModule,
+    MatListModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

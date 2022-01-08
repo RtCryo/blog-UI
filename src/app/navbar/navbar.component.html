@@ -1,1 +1,73 @@
-<p>navbar works!</p>
+<div class = "container">
+    <div class = "date">
+        {{toDate | date:'dd MMMM yyyy'}}
+    </div>
+    <div class = "time">
+        {{toDate | date:'HH:mm:ss'}}
+    </div>
+    <hr class = "linie" >
+    <div class="master">
+        <div class="photo">
+            <img src="https://www.nchti.ru/wp-content/images/profile-anonymous2.png" alt="">
+        </div>
+        <div class="description">
+            <ul>
+                <li>
+                    1
+                </li>
+                <li>
+                    2
+                </li>
+                <li>
+                    3
+                </li>
+            </ul>
+        </div>
+    </div>
+    <hr class = "linie" >
+    <div class="buttons">
+        <button mat-raised-button>Challenges</button>
+        <button mat-raised-button>Meine Favoriten</button>
+        <button mat-raised-button>Rechner</button>
+    </div>
+    <div class="converter">
+        <mat-form-field class="input-width" appearance="fill">
+            <mat-label>cm</mat-label>
+            <input matInput maxlength="7" [(ngModel)]="convertCm" (ngModelChange)="convertCmToInch($event)" appNumbersOnly>
+        </mat-form-field>
+        <mat-form-field class="input-width" appearance="fill">
+            <mat-label>inch</mat-label>
+            <input matInput maxlength="7" [(ngModel)]="convertInch" (ngModelChange)="convertInchToCm($event)" appNumbersOnly>
+        </mat-form-field>
+    </div>
+    <hr class = "linie" >
+    <div class="note">
+        <table mat-table [dataSource]="mynotes" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="description">
+                <th mat-header-cell *matHeaderCellDef> Note </th>
+                <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element"> 
+                    <button mat-icon-button (click) = "deleteNote(element)">
+                        <mat-icon>close</mat-icon>
+                    </button> 
+                </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <form class="table-input-field">
+            <mat-form-field appearance="fill">
+                <mat-label>Notiz</mat-label>
+                <input matInput #message type="text" [(ngModel)]="value" name="value">
+              <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+            </mat-form-field>
+        </form>
+        <button class = "notes-button" mat-raised-button [disabled] = "message.value.length < 1" (click) = "addNote(message.value)">Save</button>
+    </div>
+</div>

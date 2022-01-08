@@ -9,7 +9,7 @@
     place-items: center;
 }
 
-.box button{
+.box.button button{
     justify-self: stretch;
     width: 7rem;
     background-color:lightcoral

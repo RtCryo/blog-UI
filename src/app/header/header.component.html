@@ -4,12 +4,14 @@
         <form class="form">
             <mat-form-field class="full-width">
               <mat-label>Search<mat-icon>search</mat-icon></mat-label>
-              <input matInput>
+              <input matInput type="text" [(ngModel)]="value" name="value">
+              <button *ngIf="value" matSuffix mat-icon-button (click)="value=''">
+                <mat-icon>close</mat-icon>
+              </button>
             </mat-form-field>
         </form>
     </div>
     <div class="box followerCount">
-        <mat-label>Follower:</mat-label>
-        <span>{{followerCount}}</span>
+        <span>Follower: {{followerCount}}</span>
     </div>
 </div>
