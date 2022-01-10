@@ -1,0 +1,23 @@
+<div class = "container">
+    <div class="display">
+        <div>{{input}}</div>
+        <div>{{result}}</div>
+    </div>
+    <div class="box" (click) = "allClear()">C</div>
+    <div class="box" (click) = "pressOperator('/')">/</div>
+    <div class="box" (click) = "pressOperator('*')">*</div>
+    <div class="box" (click) = "pressOperator('-')">-</div>
+    <div class="box" (click) = "onClick('7')">7</div>
+    <div class="box" (click) = "onClick('8')">8</div>
+    <div class="box" (click) = "onClick('9')">9</div>
+    <div class="box plus" (click) = "pressOperator('+')">+</div>
+    <div class="box" (click) = "onClick('4')">4</div>
+    <div class="box" (click) = "onClick('5')">5</div>
+    <div class="box" (click) = "onClick('6')">6</div>
+    <div class="box" (click) = "onClick('1')">1</div>
+    <div class="box" (click) = "onClick('2')">2</div>
+    <div class="box" (click) = "onClick('3')">3</div>
+    <div class="box equal" (click) = "getAnswer()">=</div>
+    <div class="box zero" (click) = "onClick('0')">0</div>
+    <div class="box" (click) = "onClick('.')">.</div>
+</div>

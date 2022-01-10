@@ -16,6 +16,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { NumbersOnlyDirective } from './directive/numbers-only.directive';
+import { CalculatorComponent } from './calculator/calculator.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { NumbersOnlyDirective } from './directive/numbers-only.directive';
     FooterComponent,
     HomeComponent,
     NavbarComponent,
-    NumbersOnlyDirective
+    NumbersOnlyDirective,
+    CalculatorComponent
   ],
   imports: [
     BrowserModule,

@@ -28,8 +28,11 @@
     <div class="buttons">
         <button mat-raised-button>Challenges</button>
         <button mat-raised-button>Meine Favoriten</button>
-        <button mat-raised-button>Rechner</button>
+        <button mat-raised-button (click) = "calculator = !calculator">Rechner</button>
     </div>
+
+    <app-calculator *ngIf = "calculator" class="calculator" @fadeIn @fadeOut></app-calculator>
+
     <div class="converter">
         <mat-form-field class="input-width" appearance="fill">
             <mat-label>cm</mat-label>
