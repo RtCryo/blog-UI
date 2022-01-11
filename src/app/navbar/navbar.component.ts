@@ -41,7 +41,7 @@ const fadeOut = trigger('fadeOut', [
 export class NavbarComponent implements OnInit {
   @ViewChild(MatTable) table!: MatTable<Note>;
 
-  calculator = true;
+  calculator = false;
   convertCm = "0";
   convertInch = "0";
   value = "";

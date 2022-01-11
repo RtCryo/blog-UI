@@ -17,12 +17,3 @@
     width: calc(200px + (400 - 200) * ((100vw - 500px) / (1920 - 500)));
     padding: 1rem 2rem 1rem 2rem;
 }
-
-a:hover {
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-}
-
-a:active {
-    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
-    border-radius: 1%;
-}

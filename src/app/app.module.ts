@@ -15,8 +15,9 @@ import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
-import { NumbersOnlyDirective } from './directive/numbers-only.directive';
+import { NumbersOnlyDirective } from './_directive/numbers-only.directive';
 import { CalculatorComponent } from './calculator/calculator.component';
+import { CategoryComponent } from './category/category.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CalculatorComponent } from './calculator/calculator.component';
     HomeComponent,
     NavbarComponent,
     NumbersOnlyDirective,
-    CalculatorComponent
+    CalculatorComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
