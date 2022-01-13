@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   readonly providers = $providers;
   private pages = $pages;
 
-  private page: loginAction;
+  page: loginAction;
 
   readonly form: FormGroup;
   private name: FormControl;
@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
 
   get currentPage() { return this.pages[this.page || 'signIn']; }
 
-  private switchPage(page: loginAction) {
+  switchPage(page: loginAction) {
 
     // Removes all the controls from the form group
     Object.keys(this.form.controls).forEach( control => {
