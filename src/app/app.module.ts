@@ -20,6 +20,7 @@ import { CalculatorComponent } from './calculator/calculator.component';
 import { CategoryComponent } from './category/category.component';
 import { LoginDialogComponent } from './login-dialog/login-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     NumbersOnlyDirective,
     CalculatorComponent,
     CategoryComponent,
-    LoginDialogComponent
+    LoginDialogComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
