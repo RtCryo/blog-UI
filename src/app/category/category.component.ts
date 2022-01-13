@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Theme } from '../_model/theme';
 import { ThemesService } from '../_service/themes.service';
 
@@ -12,7 +12,7 @@ export class CategoryComponent implements OnInit {
 
   themes!: Theme[];
 
-  constructor(private themesService: ThemesService, private activatedRoute:ActivatedRoute,) {
+  constructor(private themesService: ThemesService, private activatedRoute:ActivatedRoute, private router: Router) {
     activatedRoute.params.subscribe((params) => {
       if(params['categoryName']) {
         this.themes = themesService.getAllThemesByCategory(params['categoryName']);
@@ -22,6 +22,10 @@ export class CategoryComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  home() {
+    this.router.navigateByUrl("/")
   }
 
 }

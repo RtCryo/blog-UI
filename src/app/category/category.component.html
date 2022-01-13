@@ -1,11 +1,13 @@
-<button mat-fab class = "floatButton home">
-    <mat-icon>home</mat-icon>
-</button>
-<button mat-fab class = "floatButton back">
-    <mat-icon>arrow_back</mat-icon>
-</button>
+<div class = "floatButton">
+    <button mat-fab (click) = "home()">
+        <mat-icon>home</mat-icon>
+    </button>
+    <button mat-fab (click) = "home()">
+        <mat-icon>arrow_back</mat-icon>
+    </button>
+</div>
 <div class = "container">
-    <a *ngFor="let t of themes" routerLink = "/category/themes/{{t.name}}">
+    <a class = "item" *ngFor="let t of themes" routerLink = "/category/themes/{{t.name}}">
         <mat-card class = "card">
             <mat-card-header>
                 <mat-card-title class = "title-text">{{t.name}}</mat-card-title>

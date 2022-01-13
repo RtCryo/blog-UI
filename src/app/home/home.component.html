@@ -1,5 +1,5 @@
 <div class = "container">
-    <a *ngFor="let t of category" routerLink = "/category/{{t}}">
+    <a class = "item" *ngFor="let t of category" routerLink = "/category/{{t}}">
         <mat-card class = "card">
             <mat-card-header>
                 <mat-card-title class = "title-text">{{t}}</mat-card-title>

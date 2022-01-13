@@ -13,8 +13,11 @@
     font-weight: bold;
 }
 
-.card {
+.item {
     width: calc(200px + (400 - 200) * ((100vw - 500px) / (1920 - 500)));
+}
+
+.card {
     padding: 1rem 2rem 1rem 2rem;
 }
 
@@ -29,22 +32,16 @@ a:active {
 }
 
 .floatButton {
-    display: block;
+    display: grid;
     position: fixed;
     z-index: 99;
+    left: 5rem;
+    top: 19rem;
+}
+
+.floatButton button {
+    border: 1px solid white;
     background-color: lightcoral;
-    color: white;
+    margin-bottom: 0.5rem;
     cursor: pointer;
 }
-
-.home {
-    left: 5%;
-    bottom: 60%;
-}
-
-.back {
-    left: 5%;
-    bottom: 52%;
-}
-
-
