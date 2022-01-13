@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { $animations } from './login-animations';
 import { $pages } from './login-pages';
 import { $providers } from './login-providers';
@@ -30,7 +31,7 @@ export class LoginComponent implements OnInit {
   public error = "";
   public progress = false;
 
-  constructor(private action: loginAction) {
+  constructor(@Inject(MAT_DIALOG_DATA) private action: loginAction) {
     this.name = new FormControl(null, Validators.required);
     this.email = new FormControl(null, [Validators.required, Validators.email]);
     this.password = new FormControl(null, Validators.required);

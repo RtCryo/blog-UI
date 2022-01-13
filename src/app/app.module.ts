@@ -18,7 +18,6 @@ import { MatTableModule } from '@angular/material/table';
 import { NumbersOnlyDirective } from './_directive/numbers-only.directive';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { CategoryComponent } from './category/category.component';
-import { LoginDialogComponent } from './login-dialog/login-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { LoginComponent } from './login/login.component';
 
@@ -31,9 +30,7 @@ import { LoginComponent } from './login/login.component';
     NavbarComponent,
     NumbersOnlyDirective,
     CalculatorComponent,
-    CategoryComponent,
-    LoginDialogComponent,
-    LoginComponent
+    CategoryComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
 import { LoginData } from '../_model/loginData';
 
 @Component({
@@ -20,16 +19,7 @@ export class HeaderComponent implements OnInit {
   }
 
   login() {
-    this.loginData = {username: "" , password: ""}
-    const dialogRef = this.dialog.open(LoginDialogComponent, {
-      width: '40%',
-      data: {username: "", password: ""}
-    });
 
-    dialogRef.afterClosed().subscribe(result => {
-      this.loginData.username = result.username;
-      this.loginData.password = result.password;
-    });
   }
 
 }
