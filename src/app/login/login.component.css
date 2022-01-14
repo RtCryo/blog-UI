@@ -28,6 +28,16 @@
     text-decoration: underline;
 }
 
+.mat-link-error {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 .mat-form-field {
     display: block;
+}
+
+.passwordError {
+    display: flex;
+    justify-content: space-between;
 }
