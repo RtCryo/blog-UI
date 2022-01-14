@@ -1,4 +1,3 @@
-
 .container {
     position: relative;
     display: flex;
@@ -21,4 +20,14 @@
   
 .providers {
     font-size: 1.5em;
+}
+
+.mat-link {
+    cursor: pointer;
+    color: rgb(55, 178, 255) !important;
+    text-decoration: underline;
+}
+
+.mat-form-field {
+    display: block;
 }

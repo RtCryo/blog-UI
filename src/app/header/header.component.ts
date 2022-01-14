@@ -21,7 +21,12 @@ export class HeaderComponent implements OnInit {
   }
 
   login(data: loginAction = 'signIn') {
-    this.dialog.open<LoginComponent,loginAction, User>(LoginComponent, { data });
+    this.dialog.open<LoginComponent,loginAction, User>(LoginComponent, {
+      data,
+      position: {
+        top: '8rem'
+      }
+    });
   }
 
 }
