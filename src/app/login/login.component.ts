@@ -1,3 +1,4 @@
+import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -6,6 +7,32 @@ import { $pages } from './login-pages';
 import { $providers } from './login-providers';
 
 export type loginAction = 'register'|'signIn'|'forgotPassword'|'changePassword'|'changeEmail'|'delete';
+
+const enterTransition = transition(':enter', [
+  style({
+    opacity: 0
+  }),
+  animate('0.6s ease-in', style({
+    opacity: 1
+  }))
+]);
+
+const leaveTrans = transition(':leave', [
+  style({
+    opacity: 1
+  }),
+  animate('0.6s ease-out', style({
+    opacity: 0
+  }))
+])
+
+const fadeIn = trigger('fadeIn', [
+  enterTransition
+]);
+
+const fadeOut = trigger('fadeOut', [
+  leaveTrans
+]);
 
 @Component({
   selector: 'app-login',
