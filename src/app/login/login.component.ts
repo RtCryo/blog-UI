@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
 
   page: loginAction;
 
-  readonly form: FormGroup;
+  form: FormGroup;
   private name: FormControl;
   private email: FormControl;
   private password: FormControl;
@@ -32,11 +32,11 @@ export class LoginComponent implements OnInit {
   public progress = false;
 
   constructor(@Inject(MAT_DIALOG_DATA) private action: loginAction) {
-    this.name = new FormControl(null, Validators.required);
-    this.email = new FormControl(null, [Validators.required, Validators.email]);
-    this.password = new FormControl(null, Validators.required);
-    this.newEmail = new FormControl(null, [Validators.required, Validators.email]);
-    this.newPassword = new FormControl(null, Validators.required);
+    this.name = new FormControl("", Validators.required);
+    this.email = new FormControl("", [Validators.required, Validators.email]);
+    this.password = new FormControl("", Validators.required);
+    this.newEmail = new FormControl("", [Validators.required, Validators.email]);
+    this.newPassword = new FormControl("", Validators.required);
 
     this.form = new FormGroup({});
 
@@ -51,9 +51,11 @@ export class LoginComponent implements OnInit {
   switchPage(page: loginAction) {
 
     // Removes all the controls from the form group
-    Object.keys(this.form.controls).forEach( control => {
+    /* Object.keys(this.form.controls).forEach( control => {
       this.form.removeControl(control);
-    });
+    }); */
+
+    this.form = new FormGroup({});
     
     // Add the relevant controls to the form according to selected page
     switch(this.page = page) {

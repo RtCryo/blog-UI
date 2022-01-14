@@ -15,8 +15,8 @@
     <div *ngIf="form.contains('name')" @inflate>
       <mat-form-field appearance="legacy" >
         <mat-label>Full name</mat-label>
-        <input matInput formControlName="name">
-        <mat-error *ngIf="form.controls['name'].errors?.['required']">
+        <input matInput formControlName="name" name = "name">
+        <mat-error *ngIf="form.controls['name'].errors?.['required'] && form.controls['name'].touched">
           Please specify your name here
         </mat-error>
       </mat-form-field>
@@ -26,11 +26,11 @@
     <div *ngIf="form.contains('email')" @inflate>
       <mat-form-field appearance="legacy">
         <mat-label>Email</mat-label>
-        <input matInput formControlName="email">
-        <mat-error *ngIf="form.controls['email'].errors?.['required']">
+        <input matInput formControlName="email" name = "email">
+        <mat-error *ngIf="form.controls['email'].errors?.['required'] && form.controls['email'].touched">
           Please specify an email address
         </mat-error>
-        <mat-error *ngIf="form.controls['email'].errors?.['email']">
+        <mat-error *ngIf="form.controls['email'].errors?.['email'] && form.controls['email'].touched">
           Ooops! it looks like this is not a valid email
         </mat-error>
       </mat-form-field>
@@ -38,16 +38,17 @@
   
     <!-- PASSWORD -->
     <div *ngIf="form.contains('password')" @inflate>
-      <mat-form-field appearance="legacy" >
+      <mat-form-field appearance="legacy">
         <mat-label>Password</mat-label>
-        <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password">
+        <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password" name = "password">
         <mat-icon matSuffix (click)="hidePassword = !hidePassword">
           {{ hidePassword ? 'visibility_off' : 'visibility'}}
         </mat-icon>
-        <mat-error *ngIf="form.controls['password'].errors?.['required']">
-          A password is required
+        <mat-error *ngIf="form.controls['password'].errors?.['required'] && form.controls['password'].touched" class = "passwordError">
+          <span>A password is required</span>
+          <span class="mat-link-error" (click)="switchPage('forgotPassword')" *ngIf = "page === 'signIn'" @inflate>Forgot password?</span>
         </mat-error>
-        <mat-hint class="mat-link" align="end" (click)="switchPage('forgotPassword')" *ngIf="page === 'signIn'" @inflate>Forgot password?</mat-hint>
+        <mat-hint class="mat-link" align="end" (click)="switchPage('forgotPassword')" *ngIf = "page === 'signIn'" @inflate>Forgot password?</mat-hint>
       </mat-form-field>
     </div>
   
@@ -55,11 +56,11 @@
     <div *ngIf="form.contains('newEmail')" @inflate>
       <mat-form-field appearance="legacy" >
         <mat-label>New email</mat-label>
-        <input matInput formControlName="newEmail">
-        <mat-error *ngIf="form.controls['newEmail'].errors?.['required']">
+        <input matInput formControlName="newEmail" name = "newEmail">
+        <mat-error *ngIf="form.controls['newEmail'].errors?.['required'] && form.controls['newEmail'].touched">
           A new email is required
         </mat-error>
-        <mat-error *ngIf="form.controls['newEmail'].errors?.['email']">
+        <mat-error *ngIf="form.controls['newEmail'].errors?.['email'] && form.controls['newEmail'].touched">
           This email looks wrong
         </mat-error>
       </mat-form-field>
@@ -69,8 +70,8 @@
     <div *ngIf="form.contains('newPassword')" @inflate>
       <mat-form-field appearance="legacy" >
         <mat-label>New  password</mat-label>
-        <input matInput formControlName="newPassword">
-        <mat-error *ngIf="form.controls['newPassword'].errors?.['required']">
+        <input matInput formControlName="newPassword" name = "newPassword">
+        <mat-error *ngIf="form.controls['newPassword'].errors?.['required'] && form.controls['newPassword'].touched">
           A new password is required
         </mat-error>
       </mat-form-field>
