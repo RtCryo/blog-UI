@@ -6,7 +6,7 @@ import { Craft } from '../_model/craft';
 })
 export class CraftService {
 
-  crafts: Craft[] = [{id:1,name:"Woooo"}, {id:1,name:"Boooo"}, {id:1,name:"Yoooo"}]
+  crafts: Craft[] = [{id:1,name:"Woooo", description: "lalala"}, {id:1,name:"Boooo", description: "lalala"}, {id:1,name:"Yoooo", description: "lalala"}]
 
   constructor() { }
 

@@ -13,6 +13,7 @@ export class CraftsComponent implements OnInit {
   crafts!: Craft[];
   categoryName!: string;
   themeName!: string;
+  watch: number = 4;
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router, private craftService: CraftService) {
     activatedRoute.params.subscribe((params) => {
@@ -32,7 +33,7 @@ export class CraftsComponent implements OnInit {
   }
 
   back() {
-    this.router.navigateByUrl("/category/" + this.categoryName);
+    this.router.navigateByUrl("/" + this.categoryName);
   }
 
 }

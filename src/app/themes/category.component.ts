@@ -26,8 +26,4 @@ export class CategoryComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  home() {
-    this.router.navigateByUrl("/")
-  }
-
 }

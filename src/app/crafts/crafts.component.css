@@ -18,30 +18,42 @@
 }
 
 .card {
-    padding: 1rem 2rem 1rem 2rem;
+    padding: 1rem 2rem 2rem 2rem;
 }
 
-a:hover {
+.card:hover {
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-    opacity: 80%;
 }
 
-a:active {
+.card:active {
     box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
     border-radius: 1%;
 }
 
-.floatButton {
-    display: grid;
-    position: fixed;
-    z-index: 99;
-    left: 5rem;
-    top: 19rem;
+.card a {
+    color: black;
 }
 
-.floatButton button {
-    border: 1px solid white;
-    background-color: lightcoral;
-    margin-bottom: 0.5rem;
+.actions {
+    display: grid;
+    grid-template-columns: 48px 48px auto;
+}
+
+.actions .comment{
+    margin-right: 8px;
+    justify-self: end;
     cursor: pointer;
+}
+
+.actions div{
+    display: flex;
+    margin-right: 8px;
+}
+
+.actions div mat-icon{
+    margin-right: 2px;
+}
+
+.actions div span{
+    cursor: default;
 }

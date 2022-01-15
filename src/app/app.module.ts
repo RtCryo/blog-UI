@@ -26,6 +26,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { CraftsComponent } from './crafts/crafts.component';
 import { PathbarComponent } from './pathbar/pathbar.component';
+import { InstructionComponent } from './instruction/instruction.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { PathbarComponent } from './pathbar/pathbar.component';
     CategoryComponent,
     LoginComponent,
     CraftsComponent,
-    PathbarComponent
+    PathbarComponent,
+    InstructionComponent
   ],
   imports: [
     BrowserModule,

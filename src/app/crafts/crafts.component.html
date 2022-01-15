@@ -1,18 +1,21 @@
-<div class = "floatButton">
-    <button mat-fab (click) = "home()">
-        <mat-icon>home</mat-icon>
-    </button>
-    <button mat-fab (click) = "home()">
-        <mat-icon>arrow_back</mat-icon>
-    </button>
-</div>
 <div class = "container">
-    <a class = "item" *ngFor="let t of crafts" routerLink = "/category/themes/{{t.name}}">
-        <mat-card class = "card">
+    <mat-card class = "card" *ngFor="let t of crafts">
+        <a class = "item" routerLink = "/{{categoryName}}/{{themeName}}/{{t.id}}">
             <mat-card-header>
                 <mat-card-title class = "title-text">{{t.name}}</mat-card-title>
             </mat-card-header>
             <img class = "card-image" mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
-        </mat-card>
-    </a>
+        </a>
+        <mat-card-actions class = "actions">
+            <div>
+                <mat-icon>visibility</mat-icon>
+                <span>{{watch}}</span>
+            </div>
+            <div>
+                <mat-icon>favorite</mat-icon>
+                <span>{{watch}}</span>
+            </div>
+            <mat-icon class = "comment">speaker_notes</mat-icon>
+        </mat-card-actions>
+    </mat-card>
 </div>

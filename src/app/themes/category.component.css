@@ -23,27 +23,11 @@
 
 a:hover {
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-    opacity: 90%;
 }
 
 a:active {
     box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
-    border-radius: 5px;
-}
-
-.floatButton {
-    display: grid;
-    position: fixed;
-    z-index: 99;
-    left: 5rem;
-    top: 19rem;
-}
-
-.floatButton button {
-    border: 1px solid white;
-    background-color: lightcoral;
-    margin-bottom: 0.5rem;
-    cursor: pointer;
+    border-radius: 1%;
 }
 
 .pageName {

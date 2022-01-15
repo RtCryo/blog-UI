@@ -1,5 +1,6 @@
 .container {
     margin-bottom: 2rem;
+    padding: 0 1rem;
 }
 
 .pageName {
@@ -13,6 +14,7 @@
     border: 2px solid gray;
     cursor: default;
     padding: 2px;
+    height: 40px;
 }
 
 .pageName a{
@@ -21,4 +23,23 @@
 
 .material-icons{
     font-size: 2rem;
+}
+
+.floatButton {
+    display: grid;
+    position: fixed;
+    z-index: 99;
+    left: 5rem;
+    top: 19rem;
+}
+
+.floatButton button {
+    border: 1px solid white;
+    background-color: lightcoral;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.floatButton button mat-icon {
+    font-size: 24px;
 }
