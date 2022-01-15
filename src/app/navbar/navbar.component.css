@@ -6,11 +6,11 @@
 }
 
 .date {
-    font-weight: bold;
+    font-size: 1.4rem;
 }
 
 .time {
-    font-size: 30px;
+    font-size: 2rem;
 }
 
 .linie {
@@ -63,4 +63,14 @@ table {
     width: 100%;
     height: 18rem;
     margin-bottom: 1rem;
+}
+
+td, th {
+    white-space: normal;
+    word-wrap: break-word;
+    max-width: 140px;
+}
+
+td.mat-cell {
+    padding: 6px 0px;
 }

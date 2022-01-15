@@ -67,8 +67,8 @@
         <form class="table-input-field">
             <mat-form-field appearance="fill">
                 <mat-label>Notiz</mat-label>
-                <input matInput #message type="text" [(ngModel)]="value" name="value">
-              <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+                <input matInput #message type="text" maxlength="128" [(ngModel)]="value" name="value">
+              <mat-hint align="end">{{message.value.length}} / 128</mat-hint>
             </mat-form-field>
         </form>
         <button class = "notes-button" mat-raised-button [disabled] = "message.value.length < 1" (click) = "addNote(message.value)">Save</button>

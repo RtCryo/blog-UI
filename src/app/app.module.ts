@@ -25,6 +25,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { CraftsComponent } from './crafts/crafts.component';
+import { PathbarComponent } from './pathbar/pathbar.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { CraftsComponent } from './crafts/crafts.component';
     CalculatorComponent,
     CategoryComponent,
     LoginComponent,
-    CraftsComponent
+    CraftsComponent,
+    PathbarComponent
   ],
   imports: [
     BrowserModule,
