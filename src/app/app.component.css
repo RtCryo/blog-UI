@@ -20,9 +20,9 @@
 }
 
 .main {
+    display: block;
     margin-left: 4rem;
-    align-items: start;
-    padding: 4rem;
+    padding: 2rem 4rem 4rem 4rem;
     grid-column-start: 1;
     grid-column-end: 2;
 }
