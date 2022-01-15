@@ -17,13 +17,14 @@ import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { NumbersOnlyDirective } from './_directive/numbers-only.directive';
 import { CalculatorComponent } from './calculator/calculator.component';
-import { CategoryComponent } from './category/category.component';
+import { CategoryComponent } from './themes/category.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { LoginComponent } from './login/login.component';
 import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { CraftsComponent } from './crafts/crafts.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     NumbersOnlyDirective,
     CalculatorComponent,
     CategoryComponent,
-    LoginComponent
+    LoginComponent,
+    CraftsComponent
   ],
   imports: [
     BrowserModule,
