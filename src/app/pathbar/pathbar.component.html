@@ -1,0 +1,29 @@
+<div *ngIf = "themeName || categoryName" class = "floatButton">
+    <button mat-fab (click) = "home()">
+        <mat-icon>home</mat-icon>
+    </button>
+    <button mat-fab (click) = "back()">
+        <mat-icon>arrow_back</mat-icon>
+    </button>
+</div>
+
+<div class = "container">
+    <div *ngIf = "!themeName && !categoryName" class = "pageName"><span>Kategorie</span></div>
+    <div *ngIf = "themeName" class = "pageName">
+        <a class="material-icons" routerLink = "/">home</a>
+        <span class="material-icons">arrow_forward_ios</span>
+        <a routerLink = "/{{categoryName}}">{{categoryName}}</a>
+        <span class="material-icons">arrow_forward_ios</span>
+        <span *ngIf = "params.length === 3">{{themeName}}</span>
+        <a *ngIf = "params.length > 3" routerLink = "/{{categoryName}}/{{themeName}}">{{themeName}}</a>
+        <div *ngIf = "params.length > 3">
+            <span class="material-icons">arrow_forward_ios</span>
+            <mat-icon>subject</mat-icon>
+        </div>
+    </div>
+    <div *ngIf = "!themeName && categoryName" class = "pageName">
+        <a class="material-icons" routerLink = "/">home</a>
+        <span class="material-icons">arrow_forward_ios</span>
+        <span>{{categoryName}}</span>
+    </div>
+</div>

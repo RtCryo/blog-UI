@@ -1,0 +1,21 @@
+<div class = "container">
+    <mat-card class = "card" *ngFor="let t of crafts">
+        <a class = "item" routerLink = "/{{categoryName}}/{{themeName}}/{{t.id}}">
+            <mat-card-header>
+                <mat-card-title class = "title-text">{{t.name}}</mat-card-title>
+            </mat-card-header>
+            <img class = "card-image" mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+        </a>
+        <mat-card-actions class = "actions">
+            <div>
+                <mat-icon>visibility</mat-icon>
+                <span>{{watch}}</span>
+            </div>
+            <div>
+                <mat-icon>favorite</mat-icon>
+                <span>{{watch}}</span>
+            </div>
+            <mat-icon class = "comment">speaker_notes</mat-icon>
+        </mat-card-actions>
+    </mat-card>
+</div>

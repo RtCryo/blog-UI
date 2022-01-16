@@ -11,12 +11,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
-import { NumbersOnlyDirective } from './directive/numbers-only.directive';
+import { NumbersOnlyDirective } from './_directive/numbers-only.directive';
 import { CalculatorComponent } from './calculator/calculator.component';
+import { CategoryComponent } from './themes/category.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { LoginComponent } from './login/login.component';
+import { CommonModule } from '@angular/common';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { CraftsComponent } from './crafts/crafts.component';
+import { PathbarComponent } from './pathbar/pathbar.component';
+import { InstructionComponent } from './instruction/instruction.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +36,12 @@ import { CalculatorComponent } from './calculator/calculator.component';
     HomeComponent,
     NavbarComponent,
     NumbersOnlyDirective,
-    CalculatorComponent
+    CalculatorComponent,
+    CategoryComponent,
+    LoginComponent,
+    CraftsComponent,
+    PathbarComponent,
+    InstructionComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +53,13 @@ import { CalculatorComponent } from './calculator/calculator.component';
     FormsModule,
     MatCardModule,
     MatListModule,
-    MatTableModule
+    MatTableModule,
+    MatDialogModule,
+    CommonModule,
+    ReactiveFormsModule,
+    FlexLayoutModule, 
+    MatFormFieldModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

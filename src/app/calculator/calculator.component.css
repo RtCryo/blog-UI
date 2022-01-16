@@ -1,6 +1,5 @@
 .container {
     height: 100%;
-    border: 1px solid;
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
     grid-template-rows: 20% auto auto auto auto auto;
