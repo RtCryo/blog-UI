@@ -14,10 +14,10 @@
     <!-- NAME -->
     <div *ngIf="form.contains('name')" @inflate>
       <mat-form-field appearance="legacy" >
-        <mat-label>Full name</mat-label>
+        <mat-label>Vollständiger Name</mat-label>
         <input matInput formControlName="name" name = "name">
         <mat-error *ngIf="form.controls['name'].errors?.['required'] && form.controls['name'].touched">
-          Please specify your name here
+          Bitte geben Sie hier Ihren Namen an
         </mat-error>
       </mat-form-field>
     </div>
@@ -28,10 +28,10 @@
         <mat-label>Email</mat-label>
         <input matInput formControlName="email" name = "email">
         <mat-error *ngIf="form.controls['email'].errors?.['required'] && form.controls['email'].touched">
-          Please specify an email address
+          Bitte geben Sie eine E-Mail-Adresse an
         </mat-error>
         <mat-error *ngIf="form.controls['email'].errors?.['email'] && form.controls['email'].touched">
-          Ooops! it looks like this is not a valid email
+          Ooops! Es sieht so aus, als wäre dies keine gültige E-Mail
         </mat-error>
       </mat-form-field>
     </div>
@@ -45,23 +45,23 @@
           {{ hidePassword ? 'visibility_off' : 'visibility'}}
         </mat-icon>
         <mat-error *ngIf="form.controls['password'].errors?.['required'] && form.controls['password'].touched" class = "passwordError">
-          <span>A password is required</span>
-          <span class="mat-link-error" (click)="switchPage('forgotPassword')" *ngIf = "page === 'signIn'" @inflate>Forgot password?</span>
+          <span>Ein Passwort ist erforderlich</span>
+          <span class="mat-link-error" (click)="switchPage('forgotPassword')" *ngIf = "page === 'signIn'" @inflate>Passwort vergessen?</span>
         </mat-error>
-        <mat-hint class="mat-link" align="end" (click)="switchPage('forgotPassword')" *ngIf = "page === 'signIn'" @inflate>Forgot password?</mat-hint>
+        <mat-hint class="mat-link" align="end" (click)="switchPage('forgotPassword')" *ngIf = "page === 'signIn'" @inflate>Passwort vergessen?</mat-hint>
       </mat-form-field>
     </div>
   
     <!-- NEW EMAIL -->
     <div *ngIf="form.contains('newEmail')" @inflate>
       <mat-form-field appearance="legacy" >
-        <mat-label>New email</mat-label>
+        <mat-label>Neu email</mat-label>
         <input matInput formControlName="newEmail" name = "newEmail">
         <mat-error *ngIf="form.controls['newEmail'].errors?.['required'] && form.controls['newEmail'].touched">
-          A new email is required
+          Eine neue E-Mail ist erforderlich
         </mat-error>
         <mat-error *ngIf="form.controls['newEmail'].errors?.['email'] && form.controls['newEmail'].touched">
-          This email looks wrong
+          Diese E-Mail sieht falsch aus
         </mat-error>
       </mat-form-field>
     </div>
@@ -69,10 +69,10 @@
     <!-- NEW PASSWORD -->
     <div *ngIf="form.contains('newPassword')" @inflate>
       <mat-form-field appearance="legacy" >
-        <mat-label>New  password</mat-label>
+        <mat-label>Neu  password</mat-label>
         <input matInput formControlName="newPassword" name = "newPassword">
         <mat-error *ngIf="form.controls['newPassword'].errors?.['required'] && form.controls['newPassword'].touched">
-          A new password is required
+          Ein neues Passwort ist erforderlich
         </mat-error>
       </mat-form-field>
     </div>
@@ -87,11 +87,11 @@
   </form>
 
   <p class="mat-small" *ngIf="page == 'signIn'">
-    Are you a new user? <span class="mat-link" (click)="switchPage('register')">Register</span>
+    Sind Sie ein neuer Benutzer? <span class="mat-link" (click)="switchPage('register')">Register</span>
   </p>
 
   <p class="mat-small" *ngIf="page === 'register' || page === 'forgotPassword'">
-    Already have login and password? <span class="mat-link" (click)="switchPage('signIn')">Sign-in</span>
+    Haben Sie bereits Login und Passwort? <span class="mat-link" (click)="switchPage('signIn')">Sign-in</span>
   </p>
 
   <!-- SIGN-IN PROVIDERS -->
