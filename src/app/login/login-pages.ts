@@ -1,38 +1,37 @@
-
 export const $pages = {
 
     "register": {// Register new user page
-      title: 'Register',
-      message: "Welcome to places. As a registered users you'll get unrestricted access to all the features",
-      caption: 'Register with my email' 
+      title: 'Registrieren',
+      message: "Willkommen!. Als registrierter Benutzer erhalten Sie uneingeschränkten Zugriff auf alle Funktionen",
+      caption: 'Registrieren Sie sich bitte mit Ihrer E-Mail' 
     }, 
     "signIn": {// Regular sign-in page
-      title: 'Sign-in',
-      message: "We're glad to see you again. Please sign-in",
-      caption: 'Sign-in with my email' 
+      title: 'Anmelden',
+      message: "Wir freuen uns, Sie wiederzusehen. Bitte hier anmelden",
+      caption: 'Mit Ihrer E-Mail anmelden' 
     },
     "forgotPassword": {// Ask for password reset page
-      title: 'Reset password',
-      message: "We'll be sending a link to reset the password to your email",
-      caption: 'Reset the password' 
+      title: 'Passwort zurücksetzen',
+      message: "Wir senden Ihnen einen Link zum Zurücksetzen des Passworts an Ihre E-Mail-Adresse",
+      caption: 'Passwort zurücksetzen' 
     },
     /*"resetPassword": {// Reset to a new password page (2nd step after forgotPassword)
       title: 'New password',
       caption: 'Change the password' 
     },*/
     "changePassword": {// Change the password (while authenticated)
-      title: 'Change password',
-      message: "Please confirm by re-authenticating",
-      caption: 'Change your password' 
+      title: 'Passwort ändern',
+      message: "Bitte bestätigen Sie durch erneute Authentifizierung",
+      caption: 'Passwort ändern' 
     },
     "changeEmail": {// Change the email 
-      title: 'Change email',
-      message: "Please confirm by re-authenticating",
-      caption: 'Change your email'
+      title: 'E-Mail ändern',
+      message: "Bitte bestätigen Sie durch erneute Authentifizierung",
+      caption: 'Ändern Sie Ihre E-Mail-Adresse'
     },
     "delete": {// Delete the user account
-      title: 'Delete account',
-      message: "WARNING! Confirmimg with your password the account will be permanently deleted",
-      caption: 'delete the account' 
+      title: 'Konto löschen',
+      message: "WARNUNG! Bestätigen Sie mit Ihrem Passwort, das Konto wird dauerhaft gelöscht",
+      caption: 'Löschen Sie das Konto' 
     }
   };
