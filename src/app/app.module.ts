@@ -27,6 +27,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { CraftsComponent } from './crafts/crafts.component';
 import { PathbarComponent } from './pathbar/pathbar.component';
 import { InstructionComponent } from './instruction/instruction.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AlifeFileToBase64Module } from 'alife-file-to-base64';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,9 @@ import { InstructionComponent } from './instruction/instruction.component';
     ReactiveFormsModule,
     FlexLayoutModule, 
     MatFormFieldModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    HttpClientModule,
+    AlifeFileToBase64Module
   ],
   providers: [],
   bootstrap: [AppComponent]
