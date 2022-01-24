@@ -19,6 +19,10 @@
     justify-items: center;
 }
 
+.admin {
+    align-self: start;
+}
+
 .main {
     display: block;
     margin-left: 4rem;

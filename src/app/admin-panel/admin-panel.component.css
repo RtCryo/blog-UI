@@ -1,0 +1,14 @@
+.container {
+    padding: 1rem;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-auto-flow: row;
+}
+
+button {
+    padding: 1rem;
+    font-size: 1.2rem;
+}

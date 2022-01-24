@@ -1,21 +1,46 @@
 <div class = "container">
+    <form [formGroup]="myForm" novalidate (ngSubmit)="submit()">
+        <div>
+            <input type="text" placeholder="craftName" name="craftName" formControlName="craftName">
+        </div>
+        <div>
+            <input type="text" placeholder="description" name="description" formControlName="description">
+        </div>
+        <div>
+            <input type="file" alife-file-to-base64 name="image" formControlName="image" (change)="selectFile($event)" [(fileModel)]="currentFile"/>
+        </div>
+
+        <div class="form-group">
+            <button [disabled]="myForm.invalid">
+              Send
+            </button>
+        </div>
+    </form>
+
     <mat-card class = "card" *ngFor="let t of crafts">
         <a class = "item" routerLink = "/{{categoryName}}/{{themeName}}/{{t.id}}">
             <mat-card-header>
-                <mat-card-title class = "title-text">{{t.name}}</mat-card-title>
+                <mat-card-title class = "title-text">
+                    {{t.craftName}}
+                </mat-card-title>
             </mat-card-header>
-            <img class = "card-image" mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+            <img [src]="t.imageFile" class = "card-image" mat-card-image />
         </a>
         <mat-card-actions class = "actions">
             <div>
                 <mat-icon>visibility</mat-icon>
-                <span>{{watch}}</span>
+                <span class = "stat">{{views}}</span>
             </div>
             <div>
-                <mat-icon>favorite</mat-icon>
-                <span>{{watch}}</span>
+                <mat-icon>thumb_up</mat-icon>
+                <span class = "stat">{{views}}</span>
             </div>
-            <mat-icon class = "comment">speaker_notes</mat-icon>
+            <button mat-icon-button class = "comment">
+                <mat-icon>
+                    speaker_notes
+                </mat-icon>
+                <span class = "stat">{{views}}</span>
+            </button>    
         </mat-card-actions>
     </mat-card>
 </div>

@@ -21,7 +21,7 @@
     padding: 1rem 2rem 2rem 2rem;
 }
 
-.card:hover {
+.card:hover{
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
@@ -34,13 +34,13 @@
     color: black;
 }
 
-.actions {
+.actions{
     display: grid;
     grid-template-columns: 48px 48px auto;
+    align-items: center;
 }
 
 .actions .comment{
-    margin-right: 8px;
     justify-self: end;
     cursor: pointer;
 }
@@ -50,10 +50,13 @@
     margin-right: 8px;
 }
 
-.actions div mat-icon{
-    margin-right: 2px;
+.stat {
+    cursor: default;
+    font-size: 0.9rem;
+    align-self: center;
+    margin-left: 2px;
 }
 
-.actions div span{
-    cursor: default;
+button span {
+    cursor: pointer;
 }

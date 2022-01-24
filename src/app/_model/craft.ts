@@ -1,5 +1,6 @@
 export class Craft {
     id!: number;
-    name!: string;
+    craftName!: string;
     description!: string;
+    imageFile!: string;
 }
