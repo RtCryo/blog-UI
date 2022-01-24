@@ -12,7 +12,7 @@ import { CraftService } from '../_service/craft.service';
 export class AdminPageCraftsComponent implements OnInit  {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   displayedColumns: string[] = ['craftName'];
-  crafts!: Craft[];
+  crafts: Craft[] = [];
   dataSource: any;
 
   constructor(craftService: CraftService) {
