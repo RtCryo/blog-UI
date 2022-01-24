@@ -29,6 +29,14 @@ import { PathbarComponent } from './pathbar/pathbar.component';
 import { InstructionComponent } from './instruction/instruction.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AlifeFileToBase64Module } from 'alife-file-to-base64';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { AdminPageComponent } from './admin-page/admin-page.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { AdminPageUsersComponent } from './admin-page-users/admin-page-users.component';
+import { AdminPageCraftsComponent } from './admin-page-crafts/admin-page-crafts.component';
+import { AdminPageThemesComponent } from './admin-page-themes/admin-page-themes.component';
+import { AdminPageCategoriesComponent } from './admin-page-categories/admin-page-categories.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -43,7 +51,13 @@ import { AlifeFileToBase64Module } from 'alife-file-to-base64';
     LoginComponent,
     CraftsComponent,
     PathbarComponent,
-    InstructionComponent
+    InstructionComponent,
+    AdminPanelComponent,
+    AdminPageComponent,
+    AdminPageUsersComponent,
+    AdminPageCraftsComponent,
+    AdminPageThemesComponent,
+    AdminPageCategoriesComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +77,9 @@ import { AlifeFileToBase64Module } from 'alife-file-to-base64';
     MatFormFieldModule,
     MatProgressBarModule,
     HttpClientModule,
-    AlifeFileToBase64Module
+    AlifeFileToBase64Module,
+    MatTabsModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

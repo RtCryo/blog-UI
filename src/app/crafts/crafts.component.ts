@@ -25,7 +25,6 @@ export class CraftsComponent implements OnInit {
       if(params['categoryName'] && params['themeName']) {
         this.categoryName = params['categoryName'];
         this.themeName = params['themeName'];
-        //this.crafts = craftService.getCraftsByCategoryAndTheme(params['categoryName'], params['themeName']);
         craftService.getAllCrafts().subscribe((response) => {
           this.crafts = response;
         })
