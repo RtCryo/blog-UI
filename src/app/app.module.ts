@@ -37,6 +37,8 @@ import { AdminPageCraftsComponent } from './admin-page-crafts/admin-page-crafts.
 import { AdminPageThemesComponent } from './admin-page-themes/admin-page-themes.component';
 import { AdminPageCategoriesComponent } from './admin-page-categories/admin-page-categories.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { CreateDialogComponent } from './admin-page-crafts/create-dialog/create-dialog.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     AdminPageUsersComponent,
     AdminPageCraftsComponent,
     AdminPageThemesComponent,
-    AdminPageCategoriesComponent
+    AdminPageCategoriesComponent,
+    CreateDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -79,7 +82,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     HttpClientModule,
     AlifeFileToBase64Module,
     MatTabsModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

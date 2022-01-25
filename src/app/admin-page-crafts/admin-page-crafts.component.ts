@@ -1,8 +1,11 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { SelectionModel } from '@angular/cdk/collections';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Craft } from '../_model/craft';
 import { CraftService } from '../_service/craft.service';
+import { CreateDialogComponent } from './create-dialog/create-dialog.component';
 
 @Component({
   selector: 'app-admin-page-crafts',
@@ -11,20 +14,43 @@ import { CraftService } from '../_service/craft.service';
 })
 export class AdminPageCraftsComponent implements OnInit  {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-  displayedColumns: string[] = ['craftName'];
-  crafts!: Craft[];
-  dataSource: any;
+  displayedColumns: string[] = ['select', 'craftName'];
+  crafts: Craft[] = [];
+  dataSource = new MatTableDataSource<Craft>(this.crafts);
+  selection = new SelectionModel<Craft>(true, []);
 
-  constructor(craftService: CraftService) {
-    craftService.getAllCrafts().subscribe((response) => {
+  constructor(private craftService: CraftService, public dialog: MatDialog) {
+    
+  }
+
+  ngOnInit(): void {
+    this.craftService.getAllCrafts().subscribe((response) => {
       this.crafts = response;
-      this.dataSource = new MatTableDataSource(this.crafts);
+      this.dataSource = new MatTableDataSource<Craft>(this.crafts);
       this.dataSource.paginator = this.paginator;
     })
   }
 
-  ngOnInit(): void {
-    
+  masterToggle() {
+    if (this.isAllSelected()) {
+      this.selection.clear();
+      return;
+    }
+
+    this.selection.select(...this.dataSource.data);
+  }
+
+  isAllSelected() {
+    const numSelected = this.selection.selected.length;
+    const numRows = this.dataSource.data.length;
+    return numSelected === numRows;
+  }
+
+  checkboxLabel(row?: Craft): string {
+    if (!row) {
+      return `${this.isAllSelected() ? 'deselect' : 'select'} all`;
+    }
+    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.id}`;
   }
 
   applyFilter(event: Event) {
@@ -34,6 +60,14 @@ export class AdminPageCraftsComponent implements OnInit  {
 
   openCraft(event: Craft) {
     console.log(event)
+  }
+
+  createCraftDialog(){
+    const dialogRef = this.dialog.open(CreateDialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 
 }
