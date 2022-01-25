@@ -14,7 +14,7 @@ import { CreateDialogComponent } from './create-dialog/create-dialog.component';
 })
 export class AdminPageThemesComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-  displayedColumns: string[] = ['select', 'craftName'];
+  displayedColumns: string[] = ['select', 'themeName'];
   themes: Theme[] = [];
   dataSource = new MatTableDataSource<Theme>(this.themes);
   selection = new SelectionModel<Theme>(true, []);
@@ -58,11 +58,11 @@ export class AdminPageThemesComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  openCraft(event: Theme) {
+  openTheme(event: Theme) {
     console.log(event)
   }
 
-  createCraftDialog(){
+  createThemeDialog(){
     const dialogRef = this.dialog.open(CreateDialogComponent);
 
     dialogRef.afterClosed().subscribe(result => {

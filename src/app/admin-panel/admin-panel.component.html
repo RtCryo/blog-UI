@@ -1,8 +1,5 @@
 <div class = "container">
     <mat-list class = "list button-row">
-        <mat-list-item><button mat-button>Users</button></mat-list-item>
-        <mat-list-item><button mat-button>Crafts</button></mat-list-item>
-        <mat-list-item><button mat-button>Themes</button></mat-list-item>
-        <mat-list-item><button mat-button>Categories</button></mat-list-item>
+        <mat-list-item *ngFor = "let t of buttons"><a mat-button [routerLink] = "['admin', t.linkName]">{{t.linkName}}</a></mat-list-item>
     </mat-list>
 </div>
