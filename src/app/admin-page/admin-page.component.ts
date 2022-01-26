@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ButtonsAdmin } from '../admin-panel/admin-panel.component';
 
 const BUTTON_DATA: ButtonsAdmin[] = [
@@ -15,9 +15,9 @@ const BUTTON_DATA: ButtonsAdmin[] = [
   styleUrls: ['./admin-page.component.css']
 })
 export class AdminPageComponent implements OnInit {
-  tabIndex!: number;
+  tabIndex: number = 0;
 
-  constructor(private activatedRoute: ActivatedRoute) {
+  constructor(private activatedRoute: ActivatedRoute, private router: Router) {
     activatedRoute.params.subscribe((params) => {
       if(params['tabName']){
         BUTTON_DATA.forEach((element) => {
@@ -25,12 +25,22 @@ export class AdminPageComponent implements OnInit {
             this.tabIndex = element.id;
           }
         })
+      } else {
+        this.router.navigateByUrl('/admin/Users');
       }
     })
    }
 
   ngOnInit(): void {
   
+  }
+
+  tabIndexChange(){
+    BUTTON_DATA.forEach((el) => {
+      if(el.id === this.tabIndex) {
+        this.router.navigateByUrl("/admin/" + el.linkName);
+      }
+    })
   }
 
 }

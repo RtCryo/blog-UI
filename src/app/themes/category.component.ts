@@ -17,7 +17,9 @@ export class CategoryComponent implements OnInit {
     activatedRoute.params.subscribe((params) => {
       if(params['categoryName']) {
         this.categoryName = params['categoryName'];
-        this.themes = themesService.getAllThemesByCategory(params['categoryName']);
+        themesService.getAllThemesByCategory(params['categoryName']).subscribe((response) => {
+          this.themes = response;
+        });
       }
     })
     

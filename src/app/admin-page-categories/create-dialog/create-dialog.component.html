@@ -1,0 +1,24 @@
+<div class="container">
+    <h2 mat-dialog-title>Create new category</h2>
+    <mat-dialog-content>
+        <form [formGroup]="dialogForm" novalidate>
+            <mat-form-field appearance="fill">
+                <mat-label>Enter category name:</mat-label>
+                <input class="form-control" name="name" formControlName="name" matInput required>
+                <mat-error *ngIf="dialogForm.controls['name'].invalid">You must enter name</mat-error>
+            </mat-form-field>
+            <section class="section">
+                <mat-label>Choose themes:</mat-label>
+                <div class="checkboxes">
+                    <div *ngFor="let t of themes">
+                        <mat-checkbox matInput (change)="onCheckChange($event, t)">{{t.name}}</mat-checkbox>
+                    </div>
+                </div>
+            </section>
+        </form>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button (click)="onNoClick()">Cancel</button>
+        <button mat-button [mat-dialog-close]="dialogForm.value" [disabled] = "dialogForm.invalid">Save</button>
+    </mat-dialog-actions>
+</div>

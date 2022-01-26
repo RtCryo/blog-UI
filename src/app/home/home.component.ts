@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Category } from '../_model/category';
 import { CategoryService } from '../_service/category.service';
 
 @Component({
@@ -8,10 +9,12 @@ import { CategoryService } from '../_service/category.service';
 })
 export class HomeComponent implements OnInit {
 
-  category: string[];
+  category!: Category[];
 
   constructor(private categoryService: CategoryService) {
-    this.category = categoryService.getAllCategory();
+    categoryService.getAllCategory().subscribe((response) => {
+      this.category = response;
+    });
    }
 
   ngOnInit(): void {

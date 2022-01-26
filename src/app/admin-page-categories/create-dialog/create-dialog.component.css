@@ -1,0 +1,20 @@
+.section{
+    margin: 1rem 0 0 0;
+}
+
+.checkboxes {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+}
+
+.checkboxes div {
+    margin-right: 1rem;
+}
+
+::ng-deep .mat-checkbox-inner-container {
+    margin-right: 2px;
+}
+
+mat-dialog-content {
+    overflow: unset;
+}

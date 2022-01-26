@@ -10,7 +10,7 @@ import { ThemeService } from 'src/app/_service/theme.service';
   templateUrl: './create-dialog.component.html',
   styleUrls: ['./create-dialog.component.css']
 })
-export class CreateDialogComponent implements OnInit {
+export class CreateDialogCraftComponent implements OnInit {
   dialogForm: FormGroup;
   craftName = new FormControl('', [Validators.required]);
   categories: Category[] = [];

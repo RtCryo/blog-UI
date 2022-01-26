@@ -1,1 +1,16 @@
-<p>create-dialog works!</p>
+<div class="container">
+    <h2 mat-dialog-title>Create new theme</h2>
+    <mat-dialog-content>
+        <form [formGroup]="dialogForm" novalidate>
+            <mat-form-field appearance="fill">
+                <mat-label>Enter theme name</mat-label>
+                <input class="form-control" name="themeName" formControlName="themeName" matInput required>
+                <mat-error *ngIf="dialogForm.controls['themeName'].invalid">You must enter name</mat-error>
+            </mat-form-field>
+        </form>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button (click)="onNoClick()">Cancel</button>
+        <button mat-button [mat-dialog-close]="dialogForm.controls['themeName'].value" [disabled] = "dialogForm.invalid">Save</button>
+    </mat-dialog-actions>
+</div>

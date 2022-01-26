@@ -8,7 +8,7 @@ import { AdminPageComponent } from './admin-page/admin-page.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'admin', component: AdminPageComponent },
+  { path: 'admin', component: AdminPageComponent},
   { path: 'admin/:tabName', component: AdminPageComponent },
   { path: ':categoryName', component: CategoryComponent},
   { path: ':categoryName/:themeName', component: CraftsComponent},

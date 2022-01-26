@@ -3,7 +3,7 @@
       <button mat-raised-button class="button" (click)="createThemeDialog()">
         Add data
       </button>
-      <button mat-raised-button [disabled]="!themes.length" class="button">
+      <button mat-raised-button [disabled]="!themes.length" (click)="removeData()" class="button">
           Remove data
       </button>
     </div>

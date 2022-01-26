@@ -1,4 +1,10 @@
-<mat-tab-group mat-align-tabs="center" [(selectedIndex)]="tabIndex">
+<!-- <nav mat-tab-nav-bar mat-align-tabs="center">
+    <a mat-tab-link *ngFor = "let link of links" 
+    (click)="changeUrl(link)"
+    [active]="activeLink == link.id">{{link.linkName}}</a>
+</nav> -->
+
+<mat-tab-group mat-align-tabs="center" [(selectedIndex)]="tabIndex" (click)="tabIndexChange()">
     <mat-tab label="Users"><app-admin-page-users></app-admin-page-users></mat-tab>
     <mat-tab label="Crafts"><app-admin-page-crafts></app-admin-page-crafts></mat-tab>
     <mat-tab label="Themes"><app-admin-page-themes></app-admin-page-themes></mat-tab>

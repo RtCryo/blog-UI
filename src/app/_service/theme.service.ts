@@ -1,16 +1,12 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Category } from '../_model/category';
 import { Theme } from '../_model/theme';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ThemeService {
-
-  themesKarten: Theme[] = [{id:1,name:"Ostern"},
-  {id:2, name:"X-Mas"}, {id:3, name:"Silvester"},
-  {id:4, name:"Geburtstag"}, {id:5, name:"Baby"},
-  {id:6, name:"Trauer"}, {id:7, name:"Hochzeit"}];
 
   constructor(private http: HttpClient) { }
 
@@ -19,27 +15,15 @@ export class ThemeService {
   }
 
   getAllThemesByCategory(category: string) {
-    switch (category) {
-      case "Karten": {
-        return this.themesKarten;
-        break;
-      }
-      case "Verpackung": {
-        return this.themesKarten;
-        break;
-      }
-      case "Boxen": {
-        return this.themesKarten;
-        break;
-      }
-      case "Alben": {
-        return this.themesKarten;
-        break;
-      }
-      default: {
-        return [];
-        break;
-      }
-    }
+    let param = new HttpParams().set('categoryName', category);
+    return this.http.post<Theme[]>(`http://localhost:8080/getAllThemesByCategory`, param, {withCredentials: true})
+  }
+
+  createTheme(theme: Theme){
+    return this.http.post<void>('http://localhost:8080/createTheme', theme, {withCredentials: true})
+  }
+
+  deleteThemes(themes: Theme[]){
+    return this.http.post<void>('http://localhost:8080/deleteThemes', themes, {withCredentials: true})
   }
 }

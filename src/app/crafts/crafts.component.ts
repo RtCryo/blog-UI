@@ -56,7 +56,7 @@ export class CraftsComponent implements OnInit {
   submit(){
     if(this.myForm.valid) {
       let t = new Craft;
-      t.craftName = this.myForm.controls["craftName"].value;
+      t.name = this.myForm.controls["craftName"].value;
       t.description = this.myForm.controls["description"].value;
       if(this.selectedFile) {
         t.imageFile = this.currentFile[0].base64;

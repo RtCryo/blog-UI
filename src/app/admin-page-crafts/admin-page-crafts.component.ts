@@ -5,7 +5,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Craft } from '../_model/craft';
 import { CraftService } from '../_service/craft.service';
-import { CreateDialogComponent } from './create-dialog/create-dialog.component';
+import { CreateDialogCraftComponent } from './create-dialog/create-dialog.component';
 
 @Component({
   selector: 'app-admin-page-crafts',
@@ -63,7 +63,7 @@ export class AdminPageCraftsComponent implements OnInit  {
   }
 
   createCraftDialog(){
-    const dialogRef = this.dialog.open(CreateDialogComponent);
+    const dialogRef = this.dialog.open(CreateDialogCraftComponent);
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');

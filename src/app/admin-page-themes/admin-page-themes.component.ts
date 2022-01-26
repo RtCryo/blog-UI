@@ -2,10 +2,10 @@ import { SelectionModel } from '@angular/cdk/collections';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatTableDataSource } from '@angular/material/table';
+import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { Theme } from '../_model/theme';
 import { ThemeService } from '../_service/theme.service';
-import { CreateDialogComponent } from './create-dialog/create-dialog.component';
+import { CreateDialogThemeComponent } from './create-dialog/create-dialog.component';
 
 @Component({
   selector: 'app-admin-page-themes',
@@ -14,6 +14,7 @@ import { CreateDialogComponent } from './create-dialog/create-dialog.component';
 })
 export class AdminPageThemesComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatTable) table!: MatTable<Theme>;
   displayedColumns: string[] = ['select', 'themeName'];
   themes: Theme[] = [];
   dataSource = new MatTableDataSource<Theme>(this.themes);
@@ -24,10 +25,15 @@ export class AdminPageThemesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.refreshThemes();
+    this.dataSource.paginator = this.paginator;
+  }
+
+  refreshThemes(){
     this.themeService.getAllThemes().subscribe((response) => {
       this.themes = response;
       this.dataSource = new MatTableDataSource<Theme>(this.themes);
-      this.dataSource.paginator = this.paginator;
+      this.table.renderRows();
     })
   }
 
@@ -63,11 +69,23 @@ export class AdminPageThemesComponent implements OnInit {
   }
 
   createThemeDialog(){
-    const dialogRef = this.dialog.open(CreateDialogComponent);
+    const dialogRef = this.dialog.open(CreateDialogThemeComponent);
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      if(result) {
+        let t = new Theme();
+        t.name = result;
+        this.themeService.createTheme(t).subscribe(() => {
+          this.refreshThemes();
+        })
+      }
     });
+  }
+
+  removeData(){
+    this.themeService.deleteThemes(this.selection.selected).subscribe(() => {
+      this.refreshThemes();
+    })
   }
 
 }
