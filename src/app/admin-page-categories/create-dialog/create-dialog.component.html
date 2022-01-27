@@ -9,9 +9,14 @@
             </mat-form-field>
             <section class="section">
                 <mat-label>Choose themes:</mat-label>
-                <div class="checkboxes">
-                    <div *ngFor="let t of themes">
-                        <mat-checkbox matInput (change)="onCheckChange($event, t)">{{t.name}}</mat-checkbox>
+                <div class="masterbox">
+                    <mat-checkbox [checked]="allComplete" [indeterminate]="someComplete()" (change)="setAll($event.checked)">Select all
+                    </mat-checkbox>
+                    <div class="checkboxes">
+                        <div *ngFor = "let t of checkedThemes">
+                            <mat-checkbox [checked]="t.checked" (change)="setBox($event.checked, t)">{{t.theme.name}}
+                            </mat-checkbox>
+                        </div>
                     </div>
                 </div>
             </section>

@@ -5,14 +5,20 @@
 .checkboxes {
     display: grid;
     grid-template-columns: repeat(4, auto);
+    margin-top: 0.5rem;
 }
 
 .checkboxes div {
     margin-right: 1rem;
 }
 
+.masterbox {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
 ::ng-deep .mat-checkbox-inner-container {
-    margin-right: 2px;
+    margin-right: 3px;
 }
 
 mat-dialog-content {
