@@ -3,7 +3,7 @@
     <button mat-raised-button class="button" (click)="createCraftDialog()">
       Add data
     </button>
-    <button mat-raised-button [disabled]="!crafts.length" class="button">
+    <button mat-raised-button [disabled]="!crafts.length" (click)="removeData()" class="button">
         Remove data
     </button>
   </div>

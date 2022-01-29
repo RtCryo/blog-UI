@@ -17,4 +17,8 @@ export class CraftService {
     return this.http.post<void>(`http://localhost:8080/saveCraft`, craft, {withCredentials: true})
   }
 
+  deleteCrafts(crafts: Craft[]){
+    return this.http.post<void>('http://localhost:8080/deleteCrafts', crafts, {withCredentials: true})
+  }
+
 }

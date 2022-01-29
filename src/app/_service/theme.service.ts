@@ -1,6 +1,5 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Category } from '../_model/category';
 import { Theme } from '../_model/theme';
 
 @Injectable({

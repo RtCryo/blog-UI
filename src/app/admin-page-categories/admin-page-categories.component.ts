@@ -90,6 +90,9 @@ export class AdminPageCategoriesComponent implements OnInit {
   removeData(){
     this.categoryService.deleteCategories(this.selection.selected).subscribe(() => {
       this.refreshCategory();
+      this.selection.selected.forEach(e => {
+        this.selection.deselect(e);
+      })
     })
   }
 

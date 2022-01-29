@@ -26,8 +26,7 @@ export class CreateDialogCategoryComponent implements OnInit {
       this.themes = response;
       this.themes.forEach((el) => {
         let t = new CheckedTheme;
-        t.theme = new Theme;
-        t.theme.name = el.name;
+        t.theme = el;
         t.checked = false;
         this.checkedThemes.push(t);
       })

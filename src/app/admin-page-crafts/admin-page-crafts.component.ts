@@ -24,10 +24,14 @@ export class AdminPageCraftsComponent implements OnInit  {
   }
 
   ngOnInit(): void {
+    this.refreshThemes();
+    this.dataSource.paginator = this.paginator;
+  }
+
+  refreshThemes(){
     this.craftService.getAllCrafts().subscribe((response) => {
       this.crafts = response;
       this.dataSource = new MatTableDataSource<Craft>(this.crafts);
-      this.dataSource.paginator = this.paginator;
     })
   }
 
@@ -68,6 +72,15 @@ export class AdminPageCraftsComponent implements OnInit  {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
+  }
+
+  removeData(){
+    this.craftService.deleteCrafts(this.selection.selected).subscribe(() => {
+      this.refreshThemes();
+      this.selection.selected.forEach(e => {
+        this.selection.deselect(e);
+      })
+    })
   }
 
 }

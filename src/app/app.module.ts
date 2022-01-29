@@ -41,6 +41,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { CreateDialogCraftComponent } from './admin-page-crafts/create-dialog/create-dialog.component';
 import { CreateDialogThemeComponent } from './admin-page-themes/create-dialog/create-dialog.component';
 import { CreateDialogCategoryComponent } from './admin-page-categories/create-dialog/create-dialog.component';
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -87,7 +88,8 @@ import { CreateDialogCategoryComponent } from './admin-page-categories/create-di
     AlifeFileToBase64Module,
     MatTabsModule,
     MatPaginatorModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

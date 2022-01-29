@@ -1,12 +1,33 @@
 <div class="container">
-    <h2 mat-dialog-title>Create new Craft</h2>
+    <h2 mat-dialog-title>Create new category</h2>
     <mat-dialog-content>
-        <form [formGroup]="dialogForm" novalidate (ngSubmit)="submit()">
-            <mat-form-field appearance="fill">
-                <mat-label>Enter craft name</mat-label>
-                <input matInput [formControl]="craftName" required>
-                <mat-error *ngIf="craftName.invalid">You must enter name</mat-error>
+        <form action="">
+            <mat-form-field>
+                <mat-label>Enter craft name:</mat-label>
+                <input matInput required>
+                <mat-error>You must enter name</mat-error>
             </mat-form-field>
+            <section class="section">
+                <mat-label>Choose category:</mat-label>
+                <div class="box checkboxes">
+                    <mat-radio-group>
+                        <mat-radio-button *ngFor = "let t of categories" value="{{t.name}}" (change) = "getThemen($event)">{{t.name}}</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+            </section>
+            <section class="section" *ngIf = "dialogForm.contains('themes')" @inflate>
+                <mat-label>Choose theme:</mat-label>
+                <div class="box">
+                    <mat-checkbox [checked]="allComplete" [indeterminate]="someComplete()" (change)="setAll($event.checked)">Select all</mat-checkbox>
+                    <div class="checkboxes">
+                        <mat-checkbox *ngFor = "let t of checkedThemes" [checked]="t.checked" (change)="setBox($event.checked, t)">{{t.theme.name}}</mat-checkbox>
+                    </div>
+                </div>
+            </section>
         </form>
     </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button (click)="onNoClick()">Cancel</button>
+        <button mat-button [mat-dialog-close]="dialogForm.value" [disabled] = "dialogForm.invalid">Save</button>
+    </mat-dialog-actions>
 </div>

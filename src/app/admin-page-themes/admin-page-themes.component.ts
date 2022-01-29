@@ -85,6 +85,9 @@ export class AdminPageThemesComponent implements OnInit {
   removeData(){
     this.themeService.deleteThemes(this.selection.selected).subscribe(() => {
       this.refreshThemes();
+      this.selection.selected.forEach(e => {
+        this.selection.deselect(e);
+      })
     })
   }
 
